@@ -1,19 +1,25 @@
 var stack = [];
-stack.push(100);
-stack.push(200);
-stack.push(300);
-
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
+// 100, 200, 300 저장
+stack.unshift(100);
+stack.unshift(200);
+stack.unshift(300);
+// 300
+// 200
+// 100
+console.log(stack.shift());
+console.log(stack.shift());
+console.log(stack.shift());
 
 var queue = [];
-queue.push(100);
-queue.push(200);
-queue.push(300);
+// 100, 200, 300 저장
+stack.unshift(100);
+stack.unshift(200);
+stack.unshift(300);
+// 100
+// 200
+// 300
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
 
-console.log(queue.shift());
-console.log(queue.shift());
-console.log(queue.shift());
-
-console.log(stack, queue);
+console.log(stack , queue);
