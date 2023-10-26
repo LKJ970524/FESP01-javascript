@@ -21,48 +21,35 @@ var todolist = [
   }
 ]
 
-// 완료된 할일 목록과 남은 할일 목록
+// forEach() 완료된 할일 목록
 var doneList = [];
-var reaminList = [];
+todolist.forEach(function(){});
+console.log('forEach() 완료된 할일 목록', doneList);
 
-for (var i = 0; i < todolist.length; i++) {
-  var todo = todolist[i];
-  if (todo.done) {
-    doneList.push(todo);
-  } else {
-    reaminList.push(todo);
-  }
-}
+// filter() 완료된 할일 목록
+var doneList = todolist.filter(function(){});
+console.log('filter() 완료된 할일 목록', doneList);
 
-console.log('완료된 할일 목록', doneList);
-console.log('남은 할일 목록', reaminList);
+// map() 남은 할일 목록
+var reaminList = todolist.map(function(){});
+console.log('map() 남은 할일 목록', reaminList);
 
-// 남은 할일 수
-var reaminCount = reaminList.length;
-console.log('남은 할일 수', reaminCount);
+// reduce() 남은 할일 수
+var reaminCount = todolist.reduce(function(){});
+console.log('reduce() 남은 할일 수', reaminCount);
 
-// _id=2인 할일과 _id=3인 할일의 index
-var todo = {};
-var todoIndex = -1;
+// find() _id=2인 할일
+var todo = todolist.find(function(){});
+console.log('find() _id=2인 할일', todo);
 
-for (var i = 0; i < todolist.length; i++) {
-  var currentTodo = todolist[i];
-  if (currentTodo._id === 2) {
-    todo = currentTodo;
-  }
+// find() _id=3인 할일의 index
+var todoIndex = todolist.find(function(){});
+console.log('find() _id=3인 할일의 index', todoIndex);
 
-  if (currentTodo._id === 3) {
-    todoIndex = i;
-  }
-}
+// some() 남은 할일이 하나라도 있는가?
+var hasTodo = todolist.some(function(){});
+console.log('some() 남은 할일이 하나라도 있는가?', hasTodo);
 
-console.log('_id=2인 할일', todo);
-console.log('_id=3인 할일의 index', todoIndex);
-
-// 남은 할일이 하나라도 있는가?
-var hasTodo = reaminCount > 0;
-console.log('남은 할일이 하나라도 있는가?', hasTodo);
-
-// 할일이 모두 완료 되었는가?
-var busy = reaminCount === 0;
-console.log('할일이 모두 완료 되었는가?', busy);
+// every() 할일이 모두 완료 되었는가?
+var busy = todolist.every(function(){});
+console.log('every() 할일이 모두 완료 되었는가?', busy);
